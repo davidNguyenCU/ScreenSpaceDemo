@@ -32,7 +32,9 @@ void main()
 
     // Transform vertex position without including projection
     position_interp = vec3(view_mat * world_mat * vec4(vertex, 1.0));
-
+	
+	
+	//result = A*t + (1-t) * B;
     // Transform normal
     normal_interp = vec3(normal_mat * vec4(normal, 0.0));
 

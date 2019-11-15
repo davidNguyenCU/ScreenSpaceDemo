@@ -22,6 +22,7 @@ namespace game {
 
         private:
             // Background color
+            // Background color
             glm::vec3 background_color_;
 
             // Scene nodes to render

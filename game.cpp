@@ -173,7 +173,7 @@ void Game::MainLoop(void){
 
         // Process the texture with a screen-space effect and display
         // the texture
-        scene_.DisplayTexture(resman_.GetResource("ScreenSpaceMaterial")->GetResource());
+        scene_.DisplayTexture(resman_.GetResource("ScreenSpaceMaterial")->GetResource()); //pass in index here
 
         // Push buffer drawn in the background onto the display
         glfwSwapBuffers(window_);

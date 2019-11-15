@@ -178,7 +178,7 @@ void SceneGraph::DrawToTexture(Camera *camera){
 }
 
 
-void SceneGraph::DisplayTexture(GLuint program){
+void SceneGraph::DisplayTexture(GLuint program){ //Pass in some index for your effect
 
     // Configure output to the screen
     //glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -203,6 +203,8 @@ void SceneGraph::DisplayTexture(GLuint program){
     GLint timer_var = glGetUniformLocation(program, "timer");
     float current_time = glfwGetTime();
     glUniform1f(timer_var, current_time);
+
+	//Do TImer stuff with new variable
 
     // Bind texture
     glActiveTexture(GL_TEXTURE0);
