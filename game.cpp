@@ -173,7 +173,7 @@ void Game::MainLoop(void){
 
         // Process the texture with a screen-space effect and display
         // the texture
-        scene_.DisplayTexture(resman_.GetResource("ScreenSpaceMaterial")->GetResource()); //pass in index here
+        scene_.DisplayTexture(resman_.GetResource("ScreenSpaceMaterial")->GetResource(), toggleSS); //pass in index here
 
         // Push buffer drawn in the background onto the display
         glfwSwapBuffers(window_);
@@ -199,6 +199,16 @@ void Game::KeyCallback(GLFWwindow* window, int key, int scancode, int action, in
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS){
         game->animating_ = (game->animating_ == true) ? false : true;
     }
+
+	if (key == GLFW_KEY_1) {
+		game->toggleSS = 1.0f;
+	}
+	if (key == GLFW_KEY_2) {
+		game->toggleSS = 2.0f;
+	}
+	if (key == GLFW_KEY_3) {
+		game->toggleSS = 3.0f;
+	}
 
     // View control
     float rot_factor(glm::pi<float>() / 180);

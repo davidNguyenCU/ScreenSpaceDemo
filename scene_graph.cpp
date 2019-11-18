@@ -178,7 +178,7 @@ void SceneGraph::DrawToTexture(Camera *camera){
 }
 
 
-void SceneGraph::DisplayTexture(GLuint program){ //Pass in some index for your effect
+void SceneGraph::DisplayTexture(GLuint program, float someSwitch){ //Pass in some index for your effect
 
     // Configure output to the screen
     //glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -203,6 +203,9 @@ void SceneGraph::DisplayTexture(GLuint program){ //Pass in some index for your e
     GLint timer_var = glGetUniformLocation(program, "timer");
     float current_time = glfwGetTime();
     glUniform1f(timer_var, current_time);
+
+	GLint index1 = glGetUniformLocation(program, "toggleSwitch");
+	glUniform1f(index1, someSwitch);
 
 	//Do TImer stuff with new variable
 

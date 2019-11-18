@@ -40,6 +40,7 @@ namespace game {
             void SetupScene(void);
             // Run the game: keep the application active
             void MainLoop(void); 
+			float toggleSS = 1.0;
 
         private:
             // GLFW window
